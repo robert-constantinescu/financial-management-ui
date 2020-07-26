@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "financial-management-ui"
+    }
+  },
+  "defaultProject": "financial-management-ui",
+  "cli": {
+    "analytics": "3ee12b5c-011f-42e3-8f07-8f248df06289"
+  }
 }
