@@ -8,7 +8,8 @@ import {IncomeChartComponent} from './components/income/income-chart/income-char
 import {IncomeDetailComponent} from './components/income/income-detail/income-detail.component';
 import {MainPageComponent} from './components/main-page/main-page.component';
 import {MenuComponent} from "./components/menu/menu.component";
-import { LoginComponent } from './auth/login/login.component';
+import {LoginComponent} from './auth/login/login.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LoginComponent } from './auth/login/login.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
