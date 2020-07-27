@@ -1,42 +1,80 @@
 <!-- Sidebar/menu -->
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<body>
+
 <app-menu></app-menu>
 
 <div class="w3-main" style="margin-left:340px;margin-right:40px;margin-top:100px">
-  <div class="card">
+  <div class="w3-row-padding">
+    <div class="w3-half">
+      <h2>Input Form</h2>
+      <div class="w3-section">
+        <input class="w3-input" type="text" required>
+        <label>Name</label>
+      </div>
+      <div class="w3-section">
+        <input class="w3-input" type="text" required>
+        <label>Email</label>
+      </div>
+      <div class="w3-section">
+        <input class="w3-input" type="text" required>
+        <label>Subject</label>
+      </div>
+
+        <div class="w3-left">
+          <label for="carz" class="w3-button w3-theme" style="margin-right: 5px">Choose a car:</label>
+
+          <select name="cars" id="carz" >
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </select>
+          <button class="w3-button  w3-large w3-green" (click)="add()">Add Income</button>
+        </div>
+    </div>
+  </div>
+
+  <div class="w3-responsive w3-card-4" style="margin-top: 10px">
     <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Income table</h3>
     <div class="card-body">
       <div id="table" class="table-editable">
-      <span class="table-add float-left mb-3 mr-2">
-        <button class="btn btn-success" (click)="add()">Add Income</button>
-      </span>
-        <table class="table table-bordered table-responsive-md table-striped text-center">
+        <table class="w3-table w3-striped w3-bordered">
           <tr>
             <th class="text-center">Person Name</th>
             <th class="text-center">Age</th>
             <th class="text-center">Company Name</th>
             <th class="text-center">Country</th>
             <th class="text-center">City</th>
-            <th class="text-center">Remove</th>
+            <th colspan="2" class="text-center">Actions</th>
           </tr>
           <tr *ngFor="let person of personList; let id = index">
-            <td>
+            <td class="text-center">
               <span (keyup)="changeValue(id, 'name', $event)" (blur)="updateList(id, 'name', $event)" contenteditable="true">{{person.name}}</span>
             </td>
-            <td>
+            <td class="text-center">
               <span contenteditable="true" (keyup)="changeValue(id, 'age', $event)" (blur)="updateList(id, 'age', $event)">{{person.age}}</span>
             </td>
-            <td>
+            <td class="text-center">
               <span contenteditable="true" (keyup)="changeValue(id, 'companyName', $event)" (blur)="updateList(id, 'companyName', $event)">{{person.companyName}}</span>
             </td>
-            <td>
+            <td class="text-center">
               <span contenteditable="true" (keyup)="changeValue(id, 'country', $event)" (blur)="updateList(id, 'country', $event)">{{person.country}}</span>
             </td>
-            <td>
+            <td class="text-center">
               <span contenteditable="true" (keyup)="changeValue(id, 'city', $event)" (blur)="updateList(id, 'city', $event)">{{person.city}}</span>
             </td>
             <td>
             <span class="table-remove">
-              <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="remove(id)">Remove</button>
+              <button type="button"  size="sm" class="w3-button w3-blue w3-responsive" (click)="remove(id)" style="margin-bottom: 5px;">Edit</button>
+            </span>
+              <span class="table-remove">
+              <button type="button" size="sm" class="w3-button w3-red w3-responsive" (click)="remove(id)">Remove</button>
             </span>
             </td>
           </tr>
@@ -45,3 +83,7 @@
     </div>
   </div>
 </div>
+
+
+</body>
+</html>

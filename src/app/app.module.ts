@@ -10,6 +10,7 @@ import {MainPageComponent} from './components/main-page/main-page.component';
 import {MenuComponent} from "./components/menu/menu.component";
 import {LoginComponent} from './auth/login/login.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     IncomeDetailComponent,
     MenuComponent,
     MainPageComponent,
-    LoginComponent
+    LoginComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,

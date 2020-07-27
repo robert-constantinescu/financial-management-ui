@@ -41,11 +41,7 @@ export class IncomeDetailComponent implements OnInit {
   }
 
   add() {
-    if (this.awaitingPersonList.length > 0) {
-      const person = this.awaitingPersonList[0];
-      this.personList.push(person);
-      this.awaitingPersonList.splice(0, 1);
-    }
+    this.personList.push({ id: 10, name: '', age: 0, companyName: '', country: '', city: '' });
   }
 
   changeValue(id: number, property: string, event: any) {
