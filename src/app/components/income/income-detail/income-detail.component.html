@@ -1,46 +1,47 @@
 <!-- Sidebar/menu -->
 <html>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" />
 <body>
-
 <app-menu></app-menu>
 
-<div class="w3-main" style="margin-left:340px;margin-right:40px;margin-top:100px">
+<div class="w3-main" style="margin-left: 340px; margin-right: 40px; margin-top: 100px;">
   <div class="w3-row-padding">
     <div class="w3-half">
-      <h2>Input Form</h2>
+      <h2>Add Income Form</h2>
       <div class="w3-section">
-        <input class="w3-input" type="text" required>
-        <label>Name</label>
+        <input class="w3-input" type="text" id="name" />
+        <label for="name">Name</label>
       </div>
       <div class="w3-section">
-        <input class="w3-input" type="text" required>
-        <label>Email</label>
+        <input class="w3-input" type="text" id="email" />
+        <label for="email">Email</label>
       </div>
       <div class="w3-section">
-        <input class="w3-input" type="text" required>
-        <label>Subject</label>
+        <input class="w3-input" type="text" id="subject" />
+        <label for="subject">Subject</label>
       </div>
 
-        <div class="w3-left">
-          <label for="carz" class="w3-button w3-theme" style="margin-right: 5px">Choose a car:</label>
+      <div class="w3-left w3-row-padding">
+        <label for="carz" class="w3-button w3-theme" style="margin-right: 5px;">Choose a car:</label>
 
-          <select name="cars" id="carz" >
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
-          </select>
-          <button class="w3-button  w3-large w3-green" (click)="add()">Add Income</button>
-        </div>
+        <select name="cars" id="carz">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
+      </div>
+      <div class="w3-row-padding">
+        <button class="w3-button w3-large w3-green" (click)="add()">Add Income</button>
+      </div>
     </div>
   </div>
 
-  <div class="w3-responsive w3-card-4" style="margin-top: 10px">
+  <div class="w3-responsive w3-card-4" style="margin-top: 10px;">
     <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Income table</h3>
     <div class="card-body">
       <div id="table" class="table-editable">
@@ -70,12 +71,12 @@
               <span contenteditable="true" (keyup)="changeValue(id, 'city', $event)" (blur)="updateList(id, 'city', $event)">{{person.city}}</span>
             </td>
             <td>
-            <span class="table-remove">
-              <button type="button"  size="sm" class="w3-button w3-blue w3-responsive" (click)="remove(id)" style="margin-bottom: 5px;">Edit</button>
-            </span>
               <span class="table-remove">
-              <button type="button" size="sm" class="w3-button w3-red w3-responsive" (click)="remove(id)">Remove</button>
-            </span>
+                <button type="button" size="sm" class="w3-button w3-blue w3-responsive" (click)="remove(id)" style="margin-bottom: 5px;">Edit</button>
+              </span>
+              <span class="table-remove">
+                <button type="button" size="sm" class="w3-button w3-red w3-responsive" (click)="remove(id)">Remove</button>
+              </span>
             </td>
           </tr>
         </table>
@@ -83,7 +84,5 @@
     </div>
   </div>
 </div>
-
-
 </body>
 </html>
