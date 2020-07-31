@@ -13,26 +13,29 @@
     <div class="w3-half">
       <h2>Add Income Form</h2>
       <div class="w3-section">
-        <input class="w3-input" type="text" id="name" />
-        <label for="name">Name</label>
+        <input class="w3-input" type="text" id="type" />
+        <label for="type">Income Type</label>
       </div>
       <div class="w3-section">
-        <input class="w3-input" type="text" id="email" />
-        <label for="email">Email</label>
+        <input class="w3-input" type="number" id="currentAmount" />
+        <label for="currentAmount">Email</label>
       </div>
       <div class="w3-section">
-        <input class="w3-input" type="text" id="subject" />
-        <label for="subject">Subject</label>
+        <input class="w3-input" type="number" id="goal" />
+        <label for="goal">Goal</label>
       </div>
 
       <div class="w3-left w3-row-padding">
-        <label for="carz" class="w3-button w3-theme" style="margin-right: 5px;">Choose a car:</label>
+        <label for="recurrence" class="w3-button w3-theme" style="margin-right: 5px;">Recurrence: </label>
 
-        <select name="cars" id="carz">
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
+        <select name="recurrence" id="recurrence">
+          <option value="DAILY">DAILY</option>
+          <option value="WEEKLY">WEEKLY</option>
+          <option value="BIWEEKLY">BI-WEEKLY</option>
+          <option value="MONTHLY">MONTHLY</option>
+          <option value="QUARTERLY">QUARTERLY</option>
+          <option value="HALFYEAR">HALF-YEAR</option>
+          <option value="YEARLY">YEARLY</option>
         </select>
       </div>
       <div class="w3-row-padding">
@@ -47,30 +50,30 @@
       <div id="table" class="table-editable">
         <table class="w3-table w3-striped w3-bordered">
           <tr>
-            <th class="text-center">Person Name</th>
-            <th class="text-center">Age</th>
-            <th class="text-center">Company Name</th>
-            <th class="text-center">Country</th>
-            <th class="text-center">City</th>
-            <th colspan="2" class="text-center">Actions</th>
+            <th class="text-center">Income Type</th>
+            <th class="text-center">Current Amount</th>
+            <th class="text-center">Goal Amount</th>
+            <th class="text-center">Recurrence</th>
+            <th class="text-center">Yearly Amount</th>
+            <th class="text-center">Actions</th>
           </tr>
-          <tr *ngFor="let person of personList; let id = index">
+          <tr *ngFor="let income of incomeList; let id = index">
             <td class="text-center">
-              <span (keyup)="changeValue(id, 'name', $event)" (blur)="updateList(id, 'name', $event)" contenteditable="true">{{person.name}}</span>
+              <span (keyup)="changeValue(id, 'type', $event)" (blur)="updateList(id, 'type', $event)" contenteditable="true">{{income.type}}</span>
             </td>
             <td class="text-center">
-              <span contenteditable="true" (keyup)="changeValue(id, 'age', $event)" (blur)="updateList(id, 'age', $event)">{{person.age}}</span>
+              <span contenteditable="true" (keyup)="changeValue(id, 'currentAmount', $event)" (blur)="updateList(id, 'currentAmount', $event)">{{income.currentAmount}}</span>
             </td>
             <td class="text-center">
-              <span contenteditable="true" (keyup)="changeValue(id, 'companyName', $event)" (blur)="updateList(id, 'companyName', $event)">{{person.companyName}}</span>
+              <span contenteditable="true" (keyup)="changeValue(id, 'goal', $event)" (blur)="updateList(id, 'goal', $event)">{{income.goal}}</span>
             </td>
             <td class="text-center">
-              <span contenteditable="true" (keyup)="changeValue(id, 'country', $event)" (blur)="updateList(id, 'country', $event)">{{person.country}}</span>
+              <span contenteditable="true" (keyup)="changeValue(id, 'recurrence', $event)" (blur)="updateList(id, 'recurrence', $event)">{{income.recurrence}}</span>
             </td>
             <td class="text-center">
-              <span contenteditable="true" (keyup)="changeValue(id, 'city', $event)" (blur)="updateList(id, 'city', $event)">{{person.city}}</span>
+              <span contenteditable="true" (keyup)="changeValue(id, 'yearlyAmount', $event)" (blur)="updateList(id, 'yearlyAmount', $event)">{{income.yearlyAmount}}</span>
             </td>
-            <td>
+            <td class="w3-left">
               <span class="table-remove">
                 <button type="button" size="sm" class="w3-button w3-blue w3-responsive" (click)="remove(id)" style="margin-bottom: 5px;">Edit</button>
               </span>
